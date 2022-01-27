@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(64, 127, 148);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    align-items: center;
+    margin: 40px;
+  }
+  
+  h1 {
+    color: rgb(184, 243, 243);
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  h2, h3 {
+    color:azure
+  }
+  
+  p, ol, li {
+    color: white;
+    font-family: verdana;
+    font-size: 1em;
+  }
