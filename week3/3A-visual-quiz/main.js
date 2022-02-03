@@ -5,12 +5,12 @@ let response;
 let responseColor = 'green';
 let heading;
 let statements = [
-   { question: 'What color do you get when you combine yellow and blue?'}
-//   { question: 'What color is opposite blue on the color wheel?', answer = 'orange'}
-//   { question: 'When black is added to a color, it is called a:'}
-//   { question: 'When white is added to a color, it is called a:'}
-//   { question: 'What visible color produces the longest prism?'}
-//   { question: 'What color contains all colors added together?'}
+   { question: 'What color do you get when you combine yellow and blue?', answer: "green"},
+   { question: 'What color is opposite blue on the color wheel?', answer: "orange"},
+   { question: 'When black is added to a color, it is called a:', answer: "shade"},
+   { question: 'When white is added to a color, it is called a:', answer: "tint"},
+   { question: 'What visible color produces the longest wavelength?', answer: "red"},
+   { question: 'What color contains all colors added together?', answer: "white"}
 ];
 function next() {
     if(statements.length < 1) {
