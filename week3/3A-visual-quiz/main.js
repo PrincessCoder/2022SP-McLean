@@ -14,28 +14,54 @@ let statements = [
 ];
 function next() {
     if(statements.length < 1) {
-        alert('YOU WON!');
+        window.alert('YOU WON!');
         return;
     }
     const randomIndex = Math.ceil(Math.random() *
     statements.length - 1);
     return statements[randomIndex];
 }
+function checkQuestion() {
+    if (currentQuestion.Question === questionInput.value ()) {
+        // remove correct answer from array
+        statements = statements.filter(statementObj => {
+            return currentQuestion.answer === statementObj.answer;
+        });
+        // this is the correct condition
+        response = 'Correct';
+        responseColor = 'green';
+    } else {
+        // this is the wrong answer condition
+        response = 'Incorrect, please try again.';
+        responseColor = 'red';
+    }
+    currentQuestion = next();
+    questionInput.value('');
+    if(currentQuestion){
+        message = currentQuestion.question;
+    } 
+}
 currentQuestion = next();
 let message = currentQuestion.question;
 
 function setup() {
     createCanvas(800, 600);
-    background('lightblue');
     heading = createElement('h1', ['Color Quiz']);
     heading.position(100, 100);
     questionInput = createInput('');
-    questionInput.size(250, 24);
+    questionInput.size(255, 25);
     questionInput.position(100, 350);
+    submitAnswerButton = createButton('submit answer');
+    submitAnswerButton.size(255, 25);
+    submitAnswerButton.mousePressed(checkQuestion);
+    submitAnswerButton.position(100, 400);
 }
 function draw() {
+    background('lightblue');
     fill('purple');
     textSize(24);
     text(message, 100, 300);
+    fill(responseColor);
+    text(response, 100, 475);
 
 }
