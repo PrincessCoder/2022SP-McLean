@@ -25,7 +25,7 @@ function checkQuestion() {
     if (currentQuestion.Question === questionInput.value ()) {
         // remove correct answer from array
         statements = statements.filter(statementObj => {
-            return currentQuestion.answer === statementObj.answer;
+            return currentQuestion.answer !==       statementObj.answer;
         });
         // this is the correct condition
         response = 'Correct';
