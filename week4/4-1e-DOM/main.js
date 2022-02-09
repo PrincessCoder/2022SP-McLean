@@ -3,7 +3,7 @@ const myEmptyDiv = document.querySelector('#myEmptyDiv');
 // put an h1 inside of it
 // create a new element
 const heading = document.createElement ('h1');
-heading.innerHTML = 'Hello Ken! It is a sunny day in Green Bay, WI.';
+heading.innerHTML = 'Hello Ken! It is a sunny day in Green Bay, WI. The llamas are sunning here at the zoo.';
 heading.style.cursor = 'pointer';
 heading.addEventListener('click', handleHeadingClick);
 myEmptyDiv.appendChild(heading);
