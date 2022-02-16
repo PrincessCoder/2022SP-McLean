@@ -16,6 +16,7 @@ const mySquare = {
     background("black");
     noLoop();
     fill("white");
+    translate(50, 275);
     for (let j = 0; j < 2; j++) {
       for (let i = 0; i < 5; i++) {
         const newCard = { x: i * 150, y: j * 150, width: 100, height: 100 }
