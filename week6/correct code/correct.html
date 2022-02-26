@@ -1,0 +1,79 @@
+<!-- Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@PrincessCoder 
+sdelehoy
+/
+programming_for_the_web_spring22
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+programming_for_the_web_spring22/wk6/assignments/index.html
+@sdelehoy
+sdelehoy update
+Latest commit 97b0a0c 22 hours ago
+ History
+ 1 contributor
+38 lines (38 sloc)  1.48 KB -->
+   
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implement Vue 2 on an HTML Page</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Ruda&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+  <main class="page-container">
+    <div class="left">
+    </div>
+    <div class="right" id="app">
+      <article>
+        <div class="header">
+          <h1>Ten Fun Facts about Llamas</h1>
+        </div>
+        <div class="content"> 
+          <ol>
+            <li v-for="item in llamaFacts">{{item.fact}}</li>
+          </ol> 
+          <p class="notice">Click the button to see the hidden llama fact!</p>
+          <button v-on:click="reveal">Reveal fact</button>
+          <p v-if="status">11. Llamas were in the US long before humans. The llama's ancestor lived in modern-day southern US over 25,000 years ago.</p>
+        </div>   
+      </article>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- © 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete -->
