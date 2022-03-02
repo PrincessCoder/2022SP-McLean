@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-AU-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Binding and CSS in Vue</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+    <div id="myApp">
+        {{greeting}}
+        <div v-if="location==='here'">You are here</div>
+        <div v-if="location==='there'">You are there</div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
+
+        <!-- <h1 v-bind: class="{'dark-mode': preferredMode === 'dark', 'light-mode: preferredMode === 'light'}">Hello Vue 3</h1>
+        <p v-bind: style="paragraphStyle">This is a paragraph.</p>
+        <h3>Things I like</h3>
+        <ul>
+            <li v-for="(value, name) in thingsILike">{{name}}: {{value}}</li>
+            <li v-bind: class></li>
+        </ul>
+        <a :href="https://www.wsj.com" :title="Wall Street Journal">Wall Street Journal</a> -->

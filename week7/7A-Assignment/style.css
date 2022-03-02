@@ -1,0 +1,16 @@
+.dark-mode {
+    background: black;
+    color: #fff;
+}
+.light-mode {
+    background: #fff;
+    color: #000;
+}
+li {
+    background: purple;
+    color: white;
+}
+.non-creature {
+    background: yellow;
+    color: black;
+}

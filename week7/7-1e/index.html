@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-AU-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+        </style>
+    <title>7.1 Llamas vs Alpacas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+    <div id="myApp">
+        <h1>Compare the Camelid Family</h1>
+        <a v-bind:title="llamaTitle" v-bind:href="llamaLand">Llamas are the best!</a><br>
+        <a v-bind:title="alpacaTitle" v-bind:href="alpacaLand">Alpacas are even better!</a>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
+
+<!-- 
+ <h1 v-bind: class="{'dark-mode': preferredMode === 'dark', 'light-mode: preferredMode === 'light'}">Hello Vue 3</h1>
+
+ <h3>Things I like</h3>
+
+<ul>
+<li v-for="(value, name) in thingsILike">{{name}}: {{value}}</li>
+<li v-bind: class></li>
+</ul>
+
+<p v-bind: style="paragraphStyle">This is a paragraph.</p>
+
+<div v-if="location==='here'">You are here</div>
+<div v-if="location==='there'">You are there</div> -->
