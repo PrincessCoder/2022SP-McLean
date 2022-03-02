@@ -1,0 +1,35 @@
+[v-cloak] {
+    display: none
+}
+body {
+    width: 500px;
+    height: 1400px;
+    margin: 0 auto;
+    background: lightblue;
+    font-family: 'Poppins', sans-serif;
+}
+h1 {
+    color: black;
+}
+h2, h3, h4, h5, h6 {
+    color: dark grey;
+}
+p {
+    color: black;
+}
+a {
+    color: green;
+}
+.llamaLand {
+    color: darkblue;
+}
+.alpacaLand {
+    color: purple;
+}
+.container {
+    display: flex;
+  }
+  
+  .item {
+    flex: 1;
+  }
