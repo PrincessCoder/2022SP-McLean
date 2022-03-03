@@ -5,5 +5,5 @@ Vue.createApp({
             llamaTitle: "Lama glama",
             alpacaLand: "https://en.wikipedia.org/wiki/Alpaca",
             alpacaTitle: "Lama pacos"
-      }
+      }}
 }).mount("#myApp");
