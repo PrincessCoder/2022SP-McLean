@@ -3,11 +3,11 @@
 Vue.createApp({
     data() {
         return {
-            collection: [{
+            collections: [{
                 // object 1
                 playerName: "Aaron Rodgers",
                 teamName: "Green Bay Packers",
-                postionPlayed: "Quarterback",
+                positionPlayed: "Quarterback",
                 cardYear: "2014",
                 cardGrade: "Bownman Chrome Superfractors card, Grading 9.5 Gem Mint"
                 },
@@ -15,7 +15,7 @@ Vue.createApp({
                 // object 2
                 playerName: "Tom Brady",
                 teamName: "New England Patriots",
-                postionPlayed: "Quarterback",
+                positionPlayed: "Quarterback",
                 cardYear: "2007",
                 cardGrade: "Topps Finest Blue Refractor card, Grading 8 Gem Mint"
                 },
@@ -23,7 +23,7 @@ Vue.createApp({
                 // object 3
                 playerName: "Ben Roethlisberger",
                 teamName: "Pittsburgh Steelers",
-                postionPlayed: "Quarterback",
+                positionPlayed: "Quarterback",
                 cardYear: "2009",
                 cardGrade: "Bownman Chrome Orange Refractor card, Grading 10 Gem Mint"
                 },
@@ -31,7 +31,7 @@ Vue.createApp({
                 // object 4
                 playerName: "Terry Bradshaw",
                 teamName: "Pittsburg Steelers",
-                postionPlayed: "Quarterback",
+                positionPlayed: "Quarterback",
                 cardYear: "2015",
                 cardGrade: "Topps Chrome Veteran Autographs card, Grading 9.5 Gem Mint"
                 },
@@ -39,11 +39,11 @@ Vue.createApp({
                 // object 5
                 playerName: "Philip Rivers",
                 teamName: "San Diego Chargers",
-                postionPlayed: "Quarterback",
+                positionPlayed: "Quarterback",
                 cardYear: "2006",
                 cardGrade: "Bownman Chrome Gold Refractor card, Grading 10 Gem Mint"
                 },
             ]
         }
     }
-}).mount("#collection");
+}).mount("#mycollectionApp");
