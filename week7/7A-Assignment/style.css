@@ -3,6 +3,7 @@ html {
   }
   *, *::before, *::after {
     box-sizing: inherit;
+    margin:2%;
   }
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -19,19 +20,51 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: 300;
     letter-spacing: normal;
     text-align: center;
+    color: gray;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid;
 }
 ol {
-
+    padding: 20;
+    margin: 5;
+    background-color: rgb(133, 134, 134);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 li {
-    color: rgb(16, 85, 53);
-}
-table, thead, tbody, th, tr, td {
-    border-collapse: collapse;
-    text-size-adjust: auto;
+    color: #fff;
     font-weight: 300;
-    padding: 1rem;
+    font-size: .8rem;
+    padding: .3rem;
 }
-#app {
-    align-content: inherit;
+table{
+    align-content: space-between;
+    text-align: center;
+}
+thead {
+    padding: 1rem;
+    background-color:rgb(202, 228, 228)
+    text-align: center;
+}
+tbody {
+    padding: 1rem;
+    background-color: rgb(213, 230, 224);
+    text-align: center;
+}
+th, tr, td {
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: 300;
+    font-size: .8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.collection {
+    background-color: aqua;
+}
+a {
+    font-size: .7rem;
+    color:rgb(57, 129, 196);
 }

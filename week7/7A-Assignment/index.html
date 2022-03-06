@@ -12,9 +12,9 @@
 
 <body>
     <div class="container">
-    <div id="app">
+    <div id="collection">
         <h1>Topps Chrome Football Card Collection</h1>
-        <p v-bind: style="paragraphStyle">Card grading is based on four components.</p>
+        <p>Card grading is based on four components.</p>
         <ol>
             <li>
                 Centering
@@ -36,24 +36,25 @@
                     <th>Photo</th>
                     <th>Player</th>
                     <th>Team</th>
+                    <th>Position Played</th>
                     <th>Card Year</th>
                     <th>Card Rating</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(consoles, index) in data" v-bind:class="{'data'}">
-                    <td><img src="img/rodgers.jpg"></td>
-                    <td>{{data.playerName}}</td>
+                <tr v-for="(collection, index) in collection" :class="{even: (index + 1) % 2 === 0, odd: (index + 1) % 2 !==0}">
+                    <td><img src="collection.image"></td>
+                    <td>{{collection.playerName}}</td>
+                    <td>{{collection.teamName}}</td>
+                    <td>{{collection.postionPlayed}}</td>
+                    <td>{{collection.cardYear}}</td>
+                    <td>{{collection.cardGrade}}</td>
                 </tr>
             </tbody>
         </table>
-        <!-- <ul>
-            <li v-for="(playerName) in data">{{playerName}}: {{value}}</li>
-            <li v-bind: class></li>
-        </ul> -->
         <a href="https://www.topps.com/" :title="Topps Chrome Football Card Collection">Topps Chrome Football Card Collection</a>
     </div>
     </div>
-    <script src="script.js"></script>
+    <script src="/collection.js"></script>
 </body>
 </html>
