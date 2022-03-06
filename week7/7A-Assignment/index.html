@@ -5,21 +5,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-AU-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transitioning from Vue 2 to Vue 3</title>
+    <title>7A Show and Tell</title>
     <script src="https://unpkg.com/vue@3"></script>
-    <style src="/style.css"></style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="myApp">
-        <h1 v-bind: class="{'dark-mode': preferredMode === 'dark', 'light-mode: preferredMode === 'light'}">Hello Vue 3</h1>
-        <p v-bind: style="paragraphStyle">This is a paragraph.</p>
-        <h3>Things I like</h3>
-        <ul>
-            <li v-for="(value, name) in thingsILike">{{name}}: {{value}}</li>
+    <div class="container">
+    <div id="app">
+        <h1>Topps Chrome Football Card Collection</h1>
+        <p v-bind: style="paragraphStyle">Card grading is based on four components.</p>
+        <ol>
+            <li>
+                Centering
+            </li>
+            <li>
+                Corners
+            </li>
+            <li>
+                Edges
+            </li>
+            <li>
+                Surface
+            </li>
+        </ol>
+        <h3>A Comparison of Quarterback Cards</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Card Year</th>
+                    <th>Card Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(consoles, index) in data" v-bind:class="{'data'}">
+                    <td><img src="img/rodgers.jpg"></td>
+                    <td>{{data.playerName}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <ul>
+            <li v-for="(playerName) in data">{{playerName}}: {{value}}</li>
             <li v-bind: class></li>
-        </ul>
-        <a :href="https://www.wsj.com" :title="Wall Street Journal">Wall Street Journal</a>
+        </ul> -->
+        <a href="https://www.topps.com/" :title="Topps Chrome Football Card Collection">Topps Chrome Football Card Collection</a>
     </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

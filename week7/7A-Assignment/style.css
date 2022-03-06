@@ -1,16 +1,37 @@
-.dark-mode {
-    background: black;
-    color: #fff;
+html {
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
-.light-mode {
-    background: #fff;
-    color: #000;
+.container {
+    text-align: left;
+    padding: 2em;
+    margin:auto;
+}
+h1 {
+    font-size: x-large;
+}
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: 300;
+    letter-spacing: normal;
+    text-align: center;
+}
+ol {
+
 }
 li {
-    background: purple;
-    color: white;
+    color: rgb(16, 85, 53);
 }
-.non-creature {
-    background: yellow;
-    color: black;
+table, thead, tbody, th, tr, td {
+    border-collapse: collapse;
+    text-size-adjust: auto;
+    font-weight: 300;
+    padding: 1rem;
+}
+#app {
+    align-content: inherit;
 }

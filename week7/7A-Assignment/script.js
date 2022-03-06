@@ -1,35 +1,44 @@
 // Creating binders
 
-Vue.createApp({
+Vue.app({
     data() {
         return {
-            myAwesomeUrl: "https//www.wsj.com",
-            linkTitle: "News"
-            preferredMode: "dark",
-            paragraphStyle: {
-                fontSize: "36px",
-                color: "blue"
-            },
-            thingsILike: {
-                food: "Peanut Butter",
-                color: "orange",
-                music: "joop",
-                movies: "sci fi"
-            },
-            cards: [
-                {
-                    name: 
-                    type:
-                    text:
+            consoles:[
+                playerName: "Aaron Rodgers",
+                teamName: "Green Bay Packers",
+                postionPlayed: "Quarterback",
+                cardYear: "2014",
+                grade: "Bownman Chrome Superfractors card, Grading 9.5 Gem Mint"
                 },
                 {
-                    name: 
-                    type:
-                    text:
+                playerName: "Aaron Rodgers",
+                teamName: "Green Bay Packers",
+                postionPlayed: "Quarterback",
+                cardYear: "2014",
+                grade: "Bownman Chrome Superfractors card, Grading 9.5 Gem Mint"
                 },
-
-                }
+                {
+                playerName: "Aaron Rodgers",
+                teamName: "Green Bay Packers",
+                postionPlayed: "Quarterback",
+                cardYear: "2014",
+                grade: "Bownman Chrome Superfractors card, Grading 9.5 Gem Mint"
+                },
+                {
+                playerName: "Aaron Rodgers",
+                teamName: "Green Bay Packers",
+                postionPlayed: "Quarterback",
+                cardYear: "2014",
+                grade: "Bownman Chrome Superfractors card, Grading 9.5 Gem Mint"
+                },
+                {
+                playerName: "Aaron Rodgers",
+                teamName: "Green Bay Packers",
+                postionPlayed: "Quarterback",
+                cardYear: "2014",
+                grade: "Bownman Chrome Superfractors card, Grading 9.5 Gem Mint"
+                },
             ]
         }
     }
-})
+}).mount(#app);
