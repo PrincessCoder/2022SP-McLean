@@ -6,14 +6,15 @@
     <meta http-equiv="X-AU-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7A Show and Tell</title>
-    <script src="https://unpkg.com/vue@3"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> -->
-    <link rel="stylesheet" href="style/style.css">
+    <!-- <script src="https://unpkg.com/vue@3"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="./collectionV2.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-    <div id="app" v-cloak>
+    <div id="mycollectionApp">
         <h1>Topps Chrome Football Card Collection</h1>
         <p>Card grading is based on four components.</p>
         <ol>
@@ -43,25 +44,21 @@
                 </tr>
             </thead>
             <tbody>
-            <tr  v-for="(collection, index) in collections" v-bind:class="{even: (index + 1) % 2 === 0, odd: (index + 1) % 2 !==0}">
-                <!-- <tr 
-                v-for="(collection, index) in collections"
+                <tr 
+                v-for="(box, index) in collections"
                 v-bind:class="{odd: index % 2 !== 0}"
-                > -->
-                    
-                <!-- <td><img v-bind:title="box.name" v-bind:src="box.image" v-bind:alt="box.playerName + ' '+ box.cardImage"/></td> -->
-                
-                    <td>{{collection.playerName}}</td>
-                    <td>{{collection.teamName}}</td>
-                    <td>{{collection.positionPlayed}}</td>
-                    <td>{{collection.cardYear}}</td>
-                    <td>{{collection.cardGrade}}</td>
+                >
+                    <!-- <td><img v-bind:title="box.name" v-bind:src="box.image" v-bind:alt="box.playerName + ' '+ box.cardImage"/></td> -->
+                    <td>{{box.playerName}}</td>
+                    <td>{{box.teamName}}</td>
+                    <td>{{box.positionPlayed}}</td>
+                    <td>{{box.cardYear}}</td>
+                    <td>{{box.cardGrade}}</td>
                 </tr>
-            </tbody>    
+            </tbody>
         </table>
         <a href="https://www.topps.com/" :title="Topps Chrome Football Card Collection">Topps Chrome Football Card Collection</a>
     </div>
     </div>
-    <script src="script/scriptV3.js"></script>
 </body>
 </html>
