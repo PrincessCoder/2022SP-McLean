@@ -3,14 +3,15 @@ html {
   }
   *, *::before, *::after {
     box-sizing: inherit;
-    margin:2%;
+
+    width:800px;
+
   }
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 .container {
     text-align: left;
-    padding: 2em;
     margin:auto;
 }
 h1 {
@@ -24,30 +25,27 @@ h1, h2, h3, h4, h5, h6, p {
     padding-bottom: .5rem;
     border-bottom: 1px solid;
 }
-ol {
-    padding: 20;
-    margin: 5;
+ul {
     background-color: rgb(133, 134, 134);
-    display: flex;
-    flex-wrap: wrap;
+    padding: 1em;
+    text-align: center;
+    display:inline-flex;
 }
 li {
     color: #fff;
     font-weight: 300;
     font-size: .8rem;
-    padding: .3rem;
+    padding: .5em
 }
 table{
-    align-content: space-between;
     text-align: center;
     border-collapse: collapse;
+    padding: 1em;
 }
 thead {
-    padding: 1rem;
     background-color:rgb(164, 204, 204)
 }
 tbody {
-    padding: 1rem;
     background-color: rgb(213, 230, 224);
     text-align: center;
 }
@@ -57,8 +55,8 @@ th, tr, td {
     font-weight: 300;
     font-size: .7rem;
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
+    padding: 1em;
+
 }
 .collection {
     background-color: aqua;
