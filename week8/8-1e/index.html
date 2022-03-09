@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-AU-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.1 Alpaca Fan Club Registration</title>
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <form>
+            <fieldset>
+                <legend>Fan Club Registration</legend>
+                <div>                    
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" v-model="firstName">
+                </div>
+                <div>                    
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" v-model="lastName">
+                </div>
+                <div>                    
+                    <label for="street">Street Address</label>
+                    <input id="street" v-model="street">
+                </div>
+                <div>                    
+                    <label for="city">City</label>
+                    <input id="city" v-model="city">
+                </div>
+                <div>        
+                    <label for="state">State</label>
+                    <input id="state" v-model="state">            
+                    </select>
+                </div>
+                <div>        
+                    <label for="country">Country</label>
+                    <input type="text" id="country" v-model="country" maxlength="3">            
+                    </select>
+                </div>
+                <div class="alpaca-color">                    
+                    <p>Favorite Alpaca Colors</p>
+                    <div>
+                        <ul>
+                            <li v-for="color in colors">
+                            <label v-bind:for="color.value">
+                            <input 
+                            type="checkbox" 
+                            name="" 
+                            id="color.value" 
+                            v-model="selectedColors"
+                            v-bind:value="color.value">
+                            {{color.name}}</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="alpaca-status">
+                    <label>Alpaca Status</label>
+                    <textarea name="" cols="30" rows="10"></textarea>
+                </div>
+            </fieldset>
+            <div class="output">
+                <h3>Output</h3>
+                First Name: {{firstName}}<br>
+                Last Name: {{lastName}}<br>
+                Street: {{street}}<br>
+                City: {{city}}<br>
+                State: {{state}}<br>
+                Color: {{selectedColors}}<br>
+                Status: {{status}}
+            </div>
+        </form>
+
+
+
+
+        <!-- <div class="container"> -->
+
+            <!-- <h1>{{title}}</h1>
+            <div class="personalInfo">
+                <ul>
+                <li><label for="firstName">First Name:   </label>
+                <input v-model="firstName" type="text" id="firstName"></li>
+
+                <li><label for="lastName">Last Name:   </label>
+                <input v-model="lastName" type="text" id="lastName"></li>
+
+                <li><label for="streetAddress">Street Address:   </label>
+                <input v-model="streetAddress" type="text" id="streetAddress"></li>
+
+                <li><label for="cityAddress">City:   </label>
+                <input v-model="cityAddress" type="text" id="cityAddress"></li>
+
+                <li><label for="stateAddress">State:   </label>
+                <input v-model="stateAddress" type="text" id="stateAddress"></li>
+
+                <li><label for="zipAddress">Zip Code:   </label>
+                <input v-model="zipAddress" type="text" id="zipAddress"></li>
+
+                <li><label for="countryAddress">Country:   </label>
+                <input v-model="countryAddress" type="text" id="countryAddress"></li>
+            </ul>
+        </div> -->
+        <!-- <div class="favoriteAlpachaColor">
+            <label for="favoriteColor">Choose your favorite Alpacha color.</label>
+            <input v-model="favoriteColor" radial="check" id="favoriteColor"> -->
+
+
+        </div>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>
