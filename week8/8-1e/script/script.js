@@ -17,7 +17,7 @@ Vue.createApp({
                             {name: 'Rose', value: 'rose'},
                             {name: 'Silver', value: 'silver'},
                         ],
-                    status: " "
+                    status: " ",
         }
     }
 }).mount("#app");
