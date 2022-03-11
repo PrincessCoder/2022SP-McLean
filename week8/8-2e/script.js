@@ -5,10 +5,11 @@ Vue.createApp({
                 secondNum: null,
                 operation: 'add',
                 total: null,
-        }
+             }
+        },
         methods: {
-            calculate: (num1, num2) => {
-                switch (vm.operation) {
+            calculate:(num1, num2) => {
+                switch(vm.operation) {
                     case 'add':
                     vm.total = num1 + num2;
                     break;
@@ -26,7 +27,6 @@ Vue.createApp({
                     break;
                 }
         vm.firstNum = vm.secondNum = null;
-            }
         }
     }
 }).mount("#app");
