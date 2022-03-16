@@ -1,0 +1,77 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+
+    /* width:800px; */
+
+  }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    text-align: left;
+    margin:auto;
+}
+h1 {
+    font-size: x-large;
+}
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: 300;
+    letter-spacing: normal;
+    text-align: center;
+    color: gray;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid;
+}
+ul {
+    background-color: rgb(133, 134, 134);
+    padding: 1em;
+    text-align: center;
+    display:inline-flex;
+    list-style-type: none;
+}
+li {
+    color: #fff;
+    font-weight: 300;
+    font-size: .8rem;
+    padding: .5em
+}
+table{
+    text-align: left;
+    border-collapse: collapse;
+    padding: 1em;
+}
+thead {
+    background-color:rgb(164, 204, 204)
+    text-align: left;
+}
+tbody {
+    background-color: rgb(213, 230, 224);
+    text-align: left;
+}
+th, tr, td {
+    border-collapse: collapse;
+    text-align: left;
+    font-weight: 300;
+    font-size: .7rem;
+    display: flex;
+    padding: 1em;
+
+}
+.collection {
+    background-color: aqua;
+}
+a {
+    font-size: .7rem;
+    color:rgb(57, 129, 196);
+}
+.odd {
+    background: #eee;
+}
+.grading {
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    margin: auto;
+}
