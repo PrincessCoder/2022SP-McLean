@@ -2,18 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-AU-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-AU-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>8A Adding and Deleting Items from Your Collection Site</title>
+    <link rel="stylesheet" href="style/normalize.css"/>
+    <link rel="stylesheet" href="style/style.css"/>
     <script src="https://unpkg.com/vue@3"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> -->
-    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-    <h1>Topps Chrome Football Card Collection</h1>
-    <div id="app" v-cloak>
+    <header class="header">
+    <h1 class="header_title">Topps Chrome Football Card Collection</h1>
+    </header>
+    <!-- <div id="app" class="outer-container" v-cloak> -->
     <div class="container">
         <div><p>Card grading is based on four components.</p>
         <ul class="grading">
@@ -34,79 +36,84 @@
         <table class="collectionWrapper">
             <thead class="collectionRow header">
                 <tr>
-                    <th class="cell console-image">Image</th>
-                    <th class="cell console-player">Player</th>
-                    <th class="cell console-team">Team</th>
-                    <th class="cell console-position">Position</th>
-                    <th class="cell console-year">Card Year</th>
-                    <th class="cell console-grade">Card Grade</th>
-                    <th class="cell collected">Collected</th>
-                    <th class="cell actions">Actions</th>
+                    <th class="collection-image">Image</th>
+                    <th class="collection-player">Player</th>
+                    <th class="collection-team">Team</th>
+                    <th class="collection-position">Position</th>
+                    <th class="collection-year">Card Year</th>
+                    <th class="collection-grade">Card Grade</th>
+                    <th class="collected">Collected</th>
+                    <th class="actions">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                 <tr class="collectionRow" v-for="(collection, index) in collections" v-bind:class="{odd: (index % 2 !== 0, owned: card.collected}">
-                    <td class="cell console-image">{{collection.image}}</td>
-                    <td class="cell console-player">{{collection.player}}</td>
-                    <td class="cell console-team">{{collection.team}}</td>
-                    <td class="cell console-position">{{collection.position}}</td>
-                    <td class="cell console-year">{{collection.cardYear}}</td>
-                    <td class="cell console-grade">{{collection.cardGrade}}</td>
-                    <td class="cell collected">{{collection.collected}}</td>
-                    <td class="cell actions">
-                        <button type="button" v-on:click="deleteItem (console)">Delete</button>
+                 <tr class="collectionRow" v-for="(collection, index) in collections" :class="{odd: (index % 2 !== 0, owned: card.collected}">
+                    <td class="collection-image">{{ collection.image }}</td>
+                    <td class="collection-player">{{ collection.player }}</td>
+                    <td class="collection-team">{{ collection.team }}</td>
+                    <td class="collection-position">{{ collection.position }}</td>
+                    <td class="collection-year">{{ collection.cardYear }}</td>
+                    <td class="collection-grade">{{ collection.cardGrade }}</td>
+                    <td class="collection">{{ collection.collected }}</td>
+                    <td class="actions">
+                        <button type="button" v-on:click="deleteItem (collection)">Delete</button>
                     </td>
                 </tr>
             </tbody>    
         </table>
     </div>
     </div>
-    <form v-on:submit.prevent="submitHandler">
+    <form @submit.prevent="addCollection">
         <fieldset>
-            <legend>
-                Add a console to the collection
+            <legend class="form_title">
+                Add a card to the collection
             </legend>
-            <div>
+            <div class="form_content">
+                <div class="form_input">
                 <label for="image">Image</label>
-                <input id="image" type="text"
-                v-model="newConsolObj.image">
+                <input 
+                id="image" 
+                type="text"
+                
+                v-model="newCollectionObj.image"/>
+                </div>
             </div>
             <div>
                 <label for="player">Player</label>
                 <input id="player" type="text"
-                v-model="newConsolObj.player">
+                v-model="newCollectionObj.player">
             </div>
             <div>
                 <label for="team">Team</label>
                 <input id="team" type="text"
-                v-model="newConsolObj.team">
+                v-model="newCollectionObj.team">
             </div>
             <div>
                 <label for="position">Position</label>
                 <input id="position" type="text"
-                v-model="newConsolObj.position">
+                v-model="newCollectionObj.position">
             </div>
             <div>
                 <label for="cardYear">Card Date</label>
                 <input id="cardYear" type="date"
-                v-model="newConsolObj.cardYear">
+                v-model="newCollectionObj.cardYear">
             </div>
             <div>
                 <label for="cardGrade">Grade</label>
                 <input id="cardGrade" type="text"
-                v-model="newConsolObj.cardGrade">
+                v-model="newCollectionObj.cardGrade">
             </div>
             <div>
                 <label for="collected">Collected</label>
                 <input id="collected" type="checkbox"
-                v-model="newConsolObj.collected">
+                v-model="newCollectionObj.collected">
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" class="form_button" :disabled="!isValid()">Submit</button>
         </fieldset>
     </form>
 </div> 
-<a href="https://www.topps.com/" title="Topps Chrome Football Card Collection">Topps Chrome Football Card Collection</a>
-    <script src="script/scriptV3.js"></script>
+    <a href="https://www.topps.com/" title="Topps Chrome Football Card Collection">Topps Chrome Football Card Collection</a>
 </div>
+    <script src="script/scriptV3.js"></script>
 </body>
 </html>
