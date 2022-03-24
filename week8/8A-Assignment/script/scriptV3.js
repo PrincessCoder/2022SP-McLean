@@ -10,7 +10,7 @@ Vue.createApp({
                     position: "Quarterback",
                     cardYear: "2014",
                     cardGrade: "Bownman Chrome Superfractors card, Grading 9.5 Gem Mint",
-                    collected: "false"
+                    collected: true
                     },
                     {
                     // object 2
@@ -19,7 +19,7 @@ Vue.createApp({
                     position: "Quarterback",
                     cardYear: "2007",
                     cardGrade: "Topps Finest Blue Refractor card, Grading 8 Gem Mint",
-                    collected: "false"
+                    collected: false
                     },
                     {
                     // object 3
@@ -28,7 +28,7 @@ Vue.createApp({
                     position: "Quarterback",
                     cardYear: "2009",
                     cardGrade: "Bownman Chrome Orange Refractor card, Grading 10 Gem Mint",
-                    collected: "false"
+                    collected: false
                     },
                     {
                     // object 4
@@ -37,7 +37,7 @@ Vue.createApp({
                     position: "Quarterback",
                     cardYear: "2015",
                     cardGrade: "Topps Chrome Veteran Autographs card, Grading 9.5 Gem Mint",
-                    collected: "false"
+                    collected: false
                     },
                     {
                     // object 5
@@ -46,17 +46,17 @@ Vue.createApp({
                     position: "Quarterback",
                     cardYear: "2006",
                     cardGrade: "Bownman Chrome Gold Refractor card, Grading 10 Gem Mint",
-                    collected: "false"
+                    collected: false
                     }
                 ],
                 newCollectionObj: {
-                    image: " ",
-                    player: " ",
-                    team: " ",
-                    position: " ",
+                    image: "",
+                    player: "",
+                    team: "",
+                    position: "",
                     cardYear: "null",
-                    cardGrade: " ",
-                    collected: "false"
+                    cardGrade: "",
+                    collected: false
                     }  
                 }   
             },
@@ -66,20 +66,18 @@ Vue.createApp({
                     this.collections.concat(
                     this.newCollectionObj);
                     this.newCollectionObj = {
-                        image: " ",
-                        player: " ",
-                        team: " ",
-                        position: " ",
+                        image: "",
+                        player: "",
+                        team: "",
+                        position: "",
                         cardYear: null,
-                        cardGrade: " ",
+                        cardGrade: "",
                         collected: false,
                     };
                    },
                 isValid() {
                    return this.newCollectionObj.player &&
-                   this.newCollectionObj.location &&
-                   this.newCollectionObj.date &&
-                   this.newCollectionObj.time;
+                   this.newCollectionObj.team
                     },
                 deleteItem (item) {
                     this.collections = this.collections.filter(collection => {

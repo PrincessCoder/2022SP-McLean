@@ -15,7 +15,7 @@
     <header class="header">
     <h1 class="header_title">Topps Chrome Football Card Collection</h1>
     </header>
-    <!-- <div id="app" class="outer-container" v-cloak> -->
+    <div id="app" class="outer-container" v-cloak>
     <div class="container">
         <div><p>Card grading is based on four components.</p>
         <ul class="grading">
@@ -42,19 +42,19 @@
                     <th class="collection-position">Position</th>
                     <th class="collection-year">Card Year</th>
                     <th class="collection-grade">Card Grade</th>
-                    <th class="collected">Collected</th>
+                    <!-- <th class="collected">Collected</th> -->
                     <th class="actions">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                 <tr class="collectionRow" v-for="(collection, index) in collections" :class="{odd: (index % 2 !== 0, owned: card.collected}">
-                    <td class="collection-image">{{ collection.image }}</td>
-                    <td class="collection-player">{{ collection.player }}</td>
-                    <td class="collection-team">{{ collection.team }}</td>
-                    <td class="collection-position">{{ collection.position }}</td>
-                    <td class="collection-year">{{ collection.cardYear }}</td>
-                    <td class="collection-grade">{{ collection.cardGrade }}</td>
-                    <td class="collection">{{ collection.collected }}</td>
+                 <tr class="collectionRow" v-for="(card, index) in collections" :class="{odd: (index % 2 !== 0), owned: card.collected}">
+                    <td class="collection-image">{{ card.image }}</td>
+                    <td class="collection-player">{{ card.player }}</td>
+                    <td class="collection-team">{{ card.team }}</td>
+                    <td class="collection-position">{{ card.position }}</td>
+                    <td class="collection-year">{{ card.cardYear }}</td>
+                    <td class="collection-grade">{{ card.cardGrade }}</td>
+                    <!-- <td class="collection">{{ card.collected }}</td> -->
                     <td class="actions">
                         <button type="button" v-on:click="deleteItem (collection)">Delete</button>
                     </td>
