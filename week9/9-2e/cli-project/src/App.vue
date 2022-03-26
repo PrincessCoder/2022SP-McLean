@@ -5,8 +5,10 @@ const isWorking = true;
 
 <template>
 <!--html goes here-->
-<h1>My first compiled Vue app</h1>
-<div v-if="isWorking">It is working</div>
+<div class="container">
+  <h1>My first compiled Vue app</h1>
+  <div v-if="isWorking">It is working</div>
+</div>
 </template>
 
 <style>
