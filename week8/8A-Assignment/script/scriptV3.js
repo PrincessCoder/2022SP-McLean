@@ -4,7 +4,7 @@ Vue.createApp({
             collections: [
                     {
                     // object 1
-                    image: "img/Rodgers.jpg",
+                    // image: "img/Rodgers.jpg",
                     player: "Aaron Rodgers",
                     team: "Green Bay Packers",
                     position: "Quarterback",
@@ -14,7 +14,7 @@ Vue.createApp({
                     },
                     {
                     // object 2
-                    player: "img/Brady.jpg",
+                    player: "Tom Brady",
                     team: "New England Patriots",
                     position: "Quarterback",
                     cardYear: "2007",
@@ -23,7 +23,7 @@ Vue.createApp({
                     },
                     {
                     // object 3
-                    player: "img/Roethlisberger.jpg",
+                    player: "Ben Roethlisberger",
                     team: "Pittsburgh Steelers",
                     position: "Quarterback",
                     cardYear: "2009",
@@ -32,7 +32,7 @@ Vue.createApp({
                     },
                     {
                     // object 4
-                    player: "img/Bradshaw.jpg",
+                    player: "Terry Bradshaw",
                     team: "Pittsburg Steelers",
                     position: "Quarterback",
                     cardYear: "2015",
@@ -41,7 +41,7 @@ Vue.createApp({
                     },
                     {
                     // object 5
-                    player: "img/Rivers.jpg",
+                    player: "Philip Rivers",
                     teamName: "San Diego Chargers",
                     position: "Quarterback",
                     cardYear: "2006",
