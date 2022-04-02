@@ -8,7 +8,9 @@
     <RouterLink  to="/alpaca">Alpaca</RouterLink> |
     <RouterLink  to="/llama">Llama</RouterLink>
   </nav>
-  <div class="container"><RouterView /></div>
+  <div class="container">
+  <RouterView></RouterView>
+  </div>
 </template>
 
 <style>
