@@ -63,7 +63,7 @@
         collected: false
     };
     const state = reactive({collections, newCollectionObj});
-    function addNewCollection() {
+    function addCollection() {
         state.collections.push({
         player: state.newCollectionObj.player,
         team: state.newCollectionObj.team,
@@ -71,7 +71,7 @@
         cardYear: state.newCollectionObj.cardYear,
         cardGrade: state.newCollectionObj.cardGrade,
         collected: state.newCollectionObj.collected,
-        id: state.collected.length + 1,
+        id: state.newCollectionObj.collected.length + 1,
         });
         state.newCollectionObj.player = "";
         state.newCollectionObj.team = "";
@@ -112,13 +112,29 @@
     </div>
 </div>
 </div>
+ <table class="collectionWrapper">
+            <thead class="collectionRow header">
+                <tr>
+                    <th class="collection-player">Player</th>
+                    <th class="collection-team">Team</th>
+                    <th class="collection-position">Position</th>
+                    <th class="collection-year">Card Year</th>
+                    <th class="collection-grade">Card Grade</th>
+                    <th class="collected">Collected</th>
+                    <th class="actions">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
     <ItemRow 
     v-for="(looper, index) in state.collections" 
     v-bind:key="index" 
-    v-bind:item="collection"
+    v-bind:item="looper"
     v-bind:index="index"
     v-on:delete-item="handleDelete"
     />
+    </tbody>
+</table>
     <div>
     <form @submit.prevent="addCollection">
         <fieldset>
@@ -165,9 +181,10 @@
                 <input id="collected" type="checkbox"
                 v-model="newCollectionObj.collected">
             </div>
-            <!-- <button type="submit" class="form_button" :disabled="!isValid()">Submit</button> -->
+            <button type="submit" class="form_button" >Submit</button>
         </fieldset>
     </form>
+</div>
 </div>
 </template>
 
@@ -182,12 +199,16 @@ html, body, .app-wrapper {
 .container {
     text-align: left;
     margin:auto;
+    width: 894px;
+    margin: 0 auto;
 }
 fieldset {
     font-family: Arial, Helvetica, sans-serif;
     font-size: .7em;
     line-height: 3em;
     padding: 1em;
+    width: 894px;
+    margin: 0 auto;
 }
 .form_title {
     font-size: 1.5em;
@@ -208,7 +229,9 @@ ul {
     background-color: rgb(133, 134, 134);
     padding: 1em;
     text-align: center;
-    display:inline-flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
     list-style-type: none;
 }
 li {
@@ -221,6 +244,8 @@ table{
     text-align: left;
     border-collapse: collapse;
     padding: 1em;
+    width: 894px;
+    margin: 0 auto;
 }
 thead {
     background-color:rgb(164, 204, 204);
@@ -235,7 +260,7 @@ th, tr, td {
     text-align: left;
     font-weight: 300;
     font-size: .7rem;
-    display: flex;
+    /* display: flex; */
     padding: 1em;
 
 }
