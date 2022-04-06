@@ -1,20 +1,26 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import home from '../views/Home.vue'
-import about from '../views/About.vue'
+import Home from "../views/Home.vue";
+import CollectionList from "../views/CollectionList.vue";
+import CollectionDetails from "../views/CollectionDetails.vue";
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/', // default path
       name: 'home',
-      component: Home,
+      component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About,
+      path: '/collection', // list of consoles
+      name: 'collection',
+      component: CollectionList
     },
+    {
+      path: "/collection/:id", // console detail
+      name: "collection-detail",
+      component: CollectionDetails
+    }
   ]
 })
 

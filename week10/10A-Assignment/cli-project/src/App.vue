@@ -1,5 +1,6 @@
 <script setup>
-    import { reactive } from 'vue';
+    // import { reactive } from 'vue';
+    import { RouterLink, RouterView } from 'vue-router';
     import ItemRow from './components/ItemRow.vue'
     const collections = [
                     {
@@ -89,6 +90,11 @@
 </script>
 
 <template>
+    <div>
+        <NavigationBar />
+    <div class="container">
+        <RouterView />
+    </div>
 
 <div class="app-wrapper">
     <h1>10A Assignment</h1>
@@ -135,55 +141,6 @@
     />
     </tbody>
 </table>
-    <div>
-    <form @submit.prevent="addCollection">
-        <fieldset>
-            <legend class="form_title">
-                Add a card to the collection
-            </legend>
-            <!-- <div class="form_content">
-                <div class="form_input">
-                <label for="image">Image</label>
-                <input 
-                id="image" 
-                type="text"
-                
-                v-model="newCollectionObj.image"/>
-                </div>
-            </div> -->
-            <div>
-                <label for="player">Player</label>
-                <input id="player" type="text"
-                v-model="newCollectionObj.player">
-            </div>
-            <div>
-                <label for="team">Team</label>
-                <input id="team" type="text"
-                v-model="newCollectionObj.team">
-            </div>
-            <div>
-                <label for="position">Position</label>
-                <input id="position" type="text"
-                v-model="newCollectionObj.position">
-            </div>
-            <div>
-                <label for="cardYear">Card Date</label>
-                <input id="cardYear" type="date"
-                v-model="newCollectionObj.cardYear">
-            </div>
-            <div>
-                <label for="cardGrade">Grade</label>
-                <input id="cardGrade" type="text"
-                v-model="newCollectionObj.cardGrade">
-            </div>
-            <div>
-                <label for="collected">Collected</label>
-                <input id="collected" type="checkbox"
-                v-model="newCollectionObj.collected">
-            </div>
-            <button type="submit" class="form_button" >Submit</button>
-        </fieldset>
-    </form>
 </div>
 </div>
 </template>
@@ -264,8 +221,8 @@ th, tr, td {
     padding: 1em;
 
 }
-.collection {
-}
+/* .collection {
+} */
 a {
     font-size: .7rem;
     color:rgb(57, 129, 196);
