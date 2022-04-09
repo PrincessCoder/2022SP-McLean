@@ -1,92 +1,7 @@
 <script setup>
-    // import { reactive } from 'vue';
     import { RouterLink, RouterView } from 'vue-router';
-    import ItemRow from './components/ItemRow.vue'
-    const collections = [
-                    {
-                    // object 1
-                    // image: "img/Rodgers.jpg",
-                    player: "Aaron Rodgers",
-                    team: "Green Bay Packers",
-                    position: "Quarterback",
-                    cardYear: "2014",
-                    cardGrade: "Bownman Chrome Superfractors card, Grading 9.5 Gem Mint",
-                    collected: true,
-                    id: 1
-                    },
-                    {
-                    // object 2
-                    player: "Tom Brady",
-                    team: "New England Patriots",
-                    position: "Quarterback",
-                    cardYear: "2007",
-                    cardGrade: "Topps Finest Blue Refractor card, Grading 8 Gem Mint",
-                    collected: false,
-                    id: 2
-                    },
-                    {
-                    // object 3
-                    player: "Ben Roethlisberger",
-                    team: "Pittsburgh Steelers",
-                    position: "Quarterback",
-                    cardYear: "2009",
-                    cardGrade: "Bownman Chrome Orange Refractor card, Grading 10 Gem Mint",
-                    collected: false,
-                    id: 3
-                    },
-                    {
-                    // object 4
-                    player: "Terry Bradshaw",
-                    team: "Pittsburg Steelers",
-                    position: "Quarterback",
-                    cardYear: "2015",
-                    cardGrade: "Topps Chrome Veteran Autographs card, Grading 9.5 Gem Mint",
-                    collected: false,
-                    id: 4
-                    },
-                    {
-                    // object 5
-                    player: "Philip Rivers",
-                    teamName: "San Diego Chargers",
-                    position: "Quarterback",
-                    cardYear: "2006",
-                    cardGrade: "Bownman Chrome Gold Refractor card, Grading 10 Gem Mint",
-                    collected: false,
-                    id: 5
-                    }
-    ];
-    const newCollectionObj = {
-        player: "",
-        team: "",
-        position: "",
-        cardYear: "null",
-        cardGrade: "",
-        collected: false
-    };
-    const state = reactive({collections, newCollectionObj});
-    function addCollection() {
-        state.collections.push({
-        player: state.newCollectionObj.player,
-        team: state.newCollectionObj.team,
-        position: state.newCollectionObj.position,
-        cardYear: state.newCollectionObj.cardYear,
-        cardGrade: state.newCollectionObj.cardGrade,
-        collected: state.newCollectionObj.collected,
-        id: state.newCollectionObj.collected.length + 1,
-        });
-        state.newCollectionObj.player = "";
-        state.newCollectionObj.team = "";
-        state.newCollectionObj.position = "";
-        state.newCollectionObj.cardYear = "";
-        state.newCollectionObj.cardGrade = "";
-        state.newCollectionObj.collected = false
-    }
-    function handleDelete(itemToDelete){
-        console.log(itemToDelete.id, itemToDelete.name);
-        state.collections = state.collections.filter((itemToCheck) => {
-            return itemToDelete !== itemToCheck;
-        });
-    }
+    import ItemRow from './components/ItemRow.vue';
+    import CardList from './components/data/card-list.json';
 </script>
 
 <template>
@@ -95,53 +10,6 @@
     <div class="container">
         <RouterView />
     </div>
-
-<div class="app-wrapper">
-    <h1>10A Assignment</h1>
-  <div id="app" class="outer-container" v-cloak>
-    <div class="container">
-        <div><p>Card grading is based on four components.</p>
-        <ul class="grading">
-            <li>
-                Centering
-            </li>
-            <li>
-                Corners
-            </li>
-            <li>
-                Edges
-            </li>
-            <li>
-                Surface
-            </li>
-        </ul>
-    </div>
-</div>
-</div>
- <table class="collectionWrapper">
-            <thead class="collectionRow header">
-                <tr>
-                    <th class="collection-player">Player</th>
-                    <th class="collection-team">Team</th>
-                    <th class="collection-position">Position</th>
-                    <th class="collection-year">Card Year</th>
-                    <th class="collection-grade">Card Grade</th>
-                    <th class="collected">Collected</th>
-                    <th class="actions">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-
-    <ItemRow 
-    v-for="(looper, index) in state.collections" 
-    v-bind:key="index" 
-    v-bind:item="looper"
-    v-bind:index="index"
-    v-on:delete-item="handleDelete"
-    />
-    </tbody>
-</table>
-</div>
 </div>
 </template>
 
