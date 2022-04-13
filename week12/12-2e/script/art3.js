@@ -13,10 +13,10 @@ function draw() {
 
 // A simple Particle class
 let Particle = function(position) {
-  this.acceleration = createVector(0, 0.05);
-  this.velocity = createVector(random(-1, 1), random(-10, 10));
+  this.acceleration = createVector(0, 0.01);
+  this.velocity = createVector(random(-1, 1), random(-1, 1));
   this.position = position.copy();
-  this.lifespan = 255;
+  this.lifespan = 255, 100, 100;
 };
 
 Particle.prototype.run = function() {
