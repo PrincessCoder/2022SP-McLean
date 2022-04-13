@@ -10,7 +10,7 @@ html {
 }
     
 .push, button, #sound1 {
-    margin-left: auto;
+    /* margin-left: auto; */
     text-decoration: none;
     text-transform: uppercase;
     border: none;
