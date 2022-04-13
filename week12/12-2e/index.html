@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="path/to/p5.sound.js"></script>
+    <script>var audio = new Audio("./sound/jazz.mp3");</script>
+    <title>Document</title>
+</head>
+<header>
+    <div>
+        <h1>Week 12 Exercise</h1>
+        <nav>
+            <ul class="main-nav">
+            <li><a href="./pages/one.html">1</a></li>
+            <li><a href="./pages/two.html">2</a></li>
+            <li><a href="./pages/three.html">3</a></li>
+            <audio id="audio" src="./sound/Jazz.mp3" preload="auto"></audio>
+            <button onclick="document.getElementById('audio').play();">Play Audio</button>
+            <!-- <li class="push"><a href="./sound/Jazz.mp3">Tap here to play sound</a></li> -->
+            </ul>
+        </nav>
+    </div>
+</header>
+<body>
+<div class="border-box">
+    <section>
+        <div>
+            <h2>Headline</h2>
+            <p>Paragraph</p>
+        </div>
+        <div class="row">
+            <div class="box">
+                <a href="./pages/one.html"><img alt="Generative Art 1" src="./img/art1.png"></a>
+                <a href="./pages/two.html"><img alt="Generative Art 2" src="./img/art2.png"></a>
+                <a href="./pages/three.html"><img alt="Generative Art 3" src="./img/art3.png"></a>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+<footer>
+    <div class="footer-text">
+        <h4>2022 Tamara McLean | MCAD Programming for the Web | This is a basic Particle System (<a href="natureofcode.com">natureofcode.com</a>)</h4>
+    </div>
+</footer>
+</html>
