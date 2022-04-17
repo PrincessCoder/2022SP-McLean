@@ -2,7 +2,7 @@ let system;
 
 function setup() {
   createCanvas(720, 400);
-  system = new ParticleSystem(createVector(width / 2, 50));
+  system = new ParticleSystem(createVector(width / 50));
 }
 
 function draw() {
@@ -16,7 +16,7 @@ let Particle = function(position) {
   this.acceleration = createVector(0, 0.01);
   this.velocity = createVector(random(-1, 1), random(-1, 1));
   this.position = position.copy();
-  this.lifespan = 255, 100, 100;
+  this.lifespan = 1000;
 };
 
 Particle.prototype.run = function() {
