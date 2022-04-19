@@ -47,11 +47,11 @@ function setup() {
     soundTwo = loadSound('./assets/soundTwo.mp3', loaded);
     soundThree = loadSound('./assets/soundThree.wav', loaded);
     buttonOne = createButton(" Sound 1 ");
-    buttonOne.mousePressed(togglePlaying);
+    buttonOne.mousePressed(togglePlaying1);
     buttonTwo = createButton(" Sound 2 ");
-    buttonTwo.mousePressed(togglePlaying);
+    buttonTwo.mousePressed(togglePlaying2);
     buttonThree = createButton(" Sound 3 ");
-    buttonThree.mousePressed(togglePlaying);
+    buttonThree.mousePressed(togglePlaying3);
 
     //density number of points in each row experiment with this value
     var density = 20
@@ -70,35 +70,39 @@ function setup() {
         }
     }
       
-      function togglePlaying() {
+    function togglePlaying1() {
           if (!soundOne.isPlaying()) {
             soundOne.loop();
-            // soundTwo.stop();
-            // soundThree.stop();
+            soundTwo.stop();
+            soundThree.stop();
             buttonOne.html('1');
           } else {
             soundOne.pause();
             buttonOne.html(' Play 1 ');
           }
-          if (!soundTwo.isPlaying()) {
-            soundTwo.loop();
-            // soundOne.stop();
-            // soundThree.stop();
-            buttonTwo.html('2');
-          } else {
-            soundTwo.pause();
-            buttonTwo.html(' Play 2 ');
-          }
-          if (!soundThree.isPlaying()) {
-            soundThree.loop();
-            // soundOne.stop();
-            // soundTwo.stop();
-            buttonThree.html('3');
-          } else {
-            soundThree.pause();
-            buttonThree.html(' Play 3 ');
-          }
     }
+    function togglePlaying2() {
+      if (!soundTwo.isPlaying()) {
+        soundTwo.loop();
+        soundOne.stop();
+        soundThree.stop();
+        buttonTwo.html('2');
+      } else {
+        soundTwo.pause();
+        buttonTwo.html(' Play 2 ');
+      }  
+}   
+function togglePlaying3() {
+  if (!soundThree.isPlaying()) {
+    soundThree.loop();
+    soundOne.stop();
+    soundTwo.stop();
+    buttonThree.html('3');
+  } else {
+    soundThree.pause();
+    buttonThree.html(' Play 3 ');
+  }
+}
 
     //to randomize lines shuffle the array
     shuffle(points, true)

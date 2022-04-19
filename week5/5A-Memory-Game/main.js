@@ -15,11 +15,11 @@ let cardback;
 function preload() {
     cardback = loadImage('images/cardback.jpg')
     cardFaceArray = [
-        loadImage('images/100-pexels-jess-loiterton-9269537.jpg'),
-        loadImage('images/100-pexels-jess-loiterton-9269539.jpg'),
-        loadImage('images/100-pexels-lukas-rodriguez-5618463.jpg'),
-        loadImage('images/100-pexels-travis-rupert-1032650.jpg'),
-        loadImage('images/hawaii.jpg')
+        { image: loadImage('images/100-pexels-jess-loiterton-9269537.jpg'), sound: loadSound('assets/sound1.mp3')},
+        { image: loadImage('images/100-pexels-jess-loiterton-9269539.jpg'),sound: loadSound('assets/sound2.mp3')},
+        { image: loadImage('images/100-pexels-lukas-rodriguez-5618463.jpg'), sound: loadSound('assets/sound3.mp3')},
+        { image: loadImage('images/100-pexels-travis-rupert-1032650.jpg'), sound: loadSound('assets/sound4.mp3')},
+        { image: loadImage('images/hawaii.jpg'), sound: loadSound('assets/sound1.mp3')}
     ]
 }
 function setup() {
@@ -37,7 +37,7 @@ function setup() {
     for (let j = 0; j < 2; j++) {
     for (let i = 0; i < 5; i++) {
         const faceImage = selectedFaces.pop();
-        cards.push(new Card(startingX, startingY, faceImage));
+        cards.push(new Card(startingX, startingY, faceImage.image, faceImage.sound));
         startingX += 120;
     }
     startingY += 150;
@@ -108,6 +108,7 @@ class Card {
         this.width = 100;
         this.height = 100;
         this.face = DOWN;
+        this.sound = cardSound;
         this.cardFaceImg = cardFaceImg;
         this.isMatch = false;
         this.show();
@@ -116,11 +117,12 @@ class Card {
         if (this.face === UP || this.isMatch) {
             fill('white');
             rect(this.x, this.y, this.width, this.height, 10);
-            image(this.cardFaceImg, this.x, this.y);
+            image(this.cardFaceImg, this.x + 4, this.y + 15);
+            this.sound.play();
         } else {
             fill('blue');
             rect(this.x, this.y, this.width, this.height, 10);
-            image(cardback, this.x, this.y);
+            image(cardback, this.x + 10, this.y + 20);
         }
     }
 
@@ -152,3 +154,56 @@ function shuffleArray (array) {
     }
     return array;
 }
+
+// from Ken
+// class Card {
+//     constructor(x, y, cardFaceImg, cardSound) {
+//       this.x = x;
+//       this.y = y;
+//       this.width = 80;
+//       this.height = 100;
+//       this.face = DOWN;
+//       this.sound = cardSound;
+//       this.cardFaceImg = cardFaceImg;
+//       this.isMatch = false;
+//       this.show();
+//     }
+//     show() {
+//       if (this.face === UP || this.isMatch) {
+//         fill('#aaa');
+//         rect(this.x, this.y, this.width, this.height, 10);
+//         image(this.cardFaceImg, this.x + 4, this.y + 15);
+//         this.sound.play();
+//       } else {
+//         fill('rgb(57.7%, 9.9%, 9.9%)');
+//         rect(this.x, this.y, this.width, this.height, 10);
+//         image(cardback, this.x + 10, this.y + 20);
+//       }
+//     }
+//     didHit(mouseX, mouseY) {
+//       if (mouseX >= this.x && mouseX <= this.x + this.width &&
+//         mouseY >= this.y && mouseY <= this.y + this.height) {
+//         this.flip();
+//         return true;
+//       } else {
+//         return false;
+//       }
+//     }
+//     flip() {
+//       if (this.face === DOWN) {
+//         this.face = UP;
+//       } else {
+//         this.face = DOWN;
+//       }
+//       this.show();
+//     }
+//   }
+//   Collapse
+
+  
+  
+  
+  
+  
+  
+  
