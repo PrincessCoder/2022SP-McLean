@@ -2,6 +2,7 @@ const DOWN = 'down';
 const UP = 'up';
 let startingX = 100;
 let startingY = 100;
+let drum;
 let cards = []
 const gameState = {
     totalPairs: 5,
@@ -13,13 +14,14 @@ const gameState = {
 let cardFaceArray = [];
 let cardback;
 function preload() {
-    cardback = loadImage('images/cardback.jpg')
+    cardback = loadImage('images/cardback.jpg');
+    drum = loadSound('assets/drum.wav');
     cardFaceArray = [
-        { image: loadImage('images/100-pexels-jess-loiterton-9269537.jpg'), sound: loadSound('assets/sound1.mp3')},
-        { image: loadImage('images/100-pexels-jess-loiterton-9269539.jpg'),sound: loadSound('assets/sound2.mp3')},
-        { image: loadImage('images/100-pexels-lukas-rodriguez-5618463.jpg'), sound: loadSound('assets/sound3.mp3')},
-        { image: loadImage('images/100-pexels-travis-rupert-1032650.jpg'), sound: loadSound('assets/sound4.mp3')},
-        { image: loadImage('images/hawaii.jpg'), sound: loadSound('assets/sound5.mp3')}
+        { image: loadImage('images/Card-01.jpg')},
+        { image: loadImage('images/Card-02.jpg')},
+        { image: loadImage('images/Card-03.jpg')},
+        { image: loadImage('images/Card-04.jpg')},
+        { image: loadImage('images/Card-05.jpg')}
     ]
 }
 function setup() {
@@ -37,7 +39,7 @@ function setup() {
     for (let j = 0; j < 2; j++) {
     for (let i = 0; i < 5; i++) {
         const faceImage = selectedFaces.pop();
-        cards.push(new Card(startingX, startingY, faceImage.image, faceImage.sound));
+        cards.push(new Card(startingX, startingY, faceImage.image));
         startingX += 120;
     }
     startingY += 150;
@@ -102,13 +104,12 @@ function mousePressed () {
 }
 
 class Card {
-    constructor(x, y, cardFaceImg, cardSound) {
+    constructor(x, y, cardFaceImg) {
         this.x = x;
         this.y = y;
         this.width = 100;
         this.height = 100;
         this.face = DOWN;
-        this.sound = cardSound;
         this.cardFaceImg = cardFaceImg;
         this.isMatch = false;
         this.show();
@@ -118,7 +119,7 @@ class Card {
             fill('white');
             rect(this.x, this.y, this.width, this.height, 10);
             image(this.cardFaceImg, this.x, this.y);
-            this.sound.play();
+            drum.play();
         } else {
             fill('blue');
             rect(this.x, this.y, this.width, this.height, 10);
