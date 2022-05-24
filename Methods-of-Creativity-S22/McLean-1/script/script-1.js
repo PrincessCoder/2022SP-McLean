@@ -1,73 +1,57 @@
+// By Roni Kaufman
+// https://ronikaufman.github.io/
+// https://twitter.com/KaufmanRoni
 
-class Module {
-    constructor(xOff, yOff, x, y, speed, unit) {
-      this.xOff = xOff;
-      this.yOff = yOff;
-      this.x = x;
-      this.y = y;
-      this.speed = speed;
-      this.unit = unit;
-      this.xDir = 1;
-      this.yDir = 1;
-    }
-  
-    // Custom method for updating the variables
-    update() {
-      this.x = this.x + this.speed * this.xDir;
-      if (this.x >= this.unit || this.x <= 0) {
-        this.xDir *= -1;
-        this.x = this.x + 1 * this.xDir;
-        this.y = this.y + 1 * this.yDir;
-      }
-      if (this.y >= this.unit || this.y <= 0) {
-        this.yDir *= -1;
-        this.y = this.y + 1 * this.yDir;
-      }
-    }
-  
-    // Custom method for drawing the object
-    draw() {
-      fill(255);
-      ellipse(this.xOff + this.x, this.yOff + this.y, 6, 6);
-    }
-  }
-  
-  let unit = 40;
-  let count;
-  let mods = [];
-  
-  function setup() {
-    createCanvas(windowWidth, windowHeight);
-    background(255, 0, 200);
-    noStroke();
-    let wideCount = width / unit;
-    let highCount = height / unit;
-    count = wideCount * highCount;
-  
-    let index = 0;
-    for (let y = 0; y < highCount; y++) {
-      for (let x = 0; x < wideCount; x++) {
-        mods[index++] = new Module(
-          x * unit,
-          y * unit,
-          unit / 2,
-          unit / 2,
-          random(0.05, 0.8),
-          unit
-        );
-      }
-    }
-  }
+let palette = ["#4464a1", "#56a1c4", "#ee726b", "#ffc5c7", "#fef9c6", "#df5f50", "#5a3034", "#f5b800", "#ffcc4d", "#4b8a5f", "#e590b8"];
 
-  function windowResized() {
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	noLoop();
+	noStroke();
+}
+
+function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
   }
-  
-  function draw() {
-    background(0);
-    for (let i = 0; i < count; i++) {
-      mods[i].update();
-      mods[i].draw();
-    }
+
+function draw() {
+	let s = width/5;
+	
+	for (let x = 0; x < width; x += s) {
+    for (let y = 0; y < height; y += s) {
+			if (random() < 1/2) {
+				makeTile(x, y, s/2);
+				makeTile(x+s/2, y, s/2);
+				makeTile(x, y+s/2, s/2);
+				makeTile(x+s/2, y+s/2, s/2);
+			} else {
+      	makeTile(x, y, s);
+			}
+		}
   }
-  
+}
+
+function makeTile(x, y, s) {
+	shuffle(palette, true);
+	fill(palette[0]);
+	square(x, y, s);
+	push();
+	translate(x+s/2, y+s/2);
+	rotate(random([0, PI/2, PI, 3*PI/2]));
+	fill(palette[1]);
+	let r = floor(random(4));
+	if (r == 0) {
+		arc(-s/2, 0, s, s, -PI/2, PI/2);
+	} else if (r == 1) {
+		rect(-s/2, -s/2, s/2, s);
+	} else if (r == 2) {
+		triangle(-s/2, -s/2, s/2, -s/2, -s/2, s/2);
+	}
+	pop();
+}
+
+function keyPressed() {
+  if (key == " ") {
+    redraw();
+  }
+}
